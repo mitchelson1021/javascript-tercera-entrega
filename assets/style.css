@@ -20,6 +20,13 @@ body{
     border-radius: 5px;
 }
 
+.carrito{
+    max-width: 40%;
+    height: 100vh;
+    background-color: black;
+
+}
+
 
 footer{
     height: 30px;
