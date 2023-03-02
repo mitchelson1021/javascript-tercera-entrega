@@ -21,10 +21,26 @@ body{
 }
 
 .carrito{
+    position: relative;
+    opacity: 1;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 28px #38383881;
     max-width: 40%;
     height: 100vh;
-    background-color: black;
+    background-color: white;
 
+}
+
+.popup_flotante{
+    position: relative;
+    opacity: 1;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 28px #38383881;
 }
 
 

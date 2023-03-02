@@ -1,7 +1,7 @@
 let productos = [
     {
         "id": 1,
-        "nombre":"Producto 1",
+        "nombre":"Producto 5",
         "imagen":"./assets/imagenes/signos/Acuario/acuario-producto-1.jpg",
         "descripcion":"",
         "precio":10.990,

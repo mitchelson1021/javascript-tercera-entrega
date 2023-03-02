@@ -53,11 +53,11 @@
                     <div class="d-flex justify-content-center flex-wrap"> <!--cuadro columnas-->
                         
                         <div class="card-producto text-center"> <!--card producto-->
-                            <div class="card" style="width: 18rem; margin: 10px;">
-                                <img src="./assets/imagenes/signos/Acuario/acuario-producto-1.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
+                            <div id="cardProduct" class="card" style="width: 18rem; margin: 10px;">
+                                <img id="imgProduct" src="./assets/imagenes/signos/Acuario/acuario-producto-1.jpg" class="card-img-top" alt="...">
+                                <div id="cardTitle" class="card-body">
                                   <h5 class="card-title">Producto 1</h5>
-                                  <p class="card-text">$10.990</p>
+                                  <p id="cardPrice" class="card-text">$10.990</p>
                                   <button type="button" class="btn btn-primary btn_agregar">Agregar al carrito</button>
                                 </div>
                               </div>
@@ -98,11 +98,36 @@
             </div>
 
         </div>
-        <div class="carrito">
-            <div>
 
+        <div class="carrito text-center">
+            <div><h3>Carrito de compras</h3>
+                <table class="d-flex justify-content-center">
+                    <tbody>
+                        <tr>
+                            <td id="imagen_carrito"></td>
+                            <td id="cantidad_carrito"></td>
+                            <td id="producto_carrito"></td>
+                            <td id="precio_carrito"></td>
+                            <td id="btn_eliminar_carrito"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <tr>
+                        <td>
+                            Total:
+                        </td>
+                        <td id="total_carrito"></td>
+                    </tr>                    
+                </table>
+                <button type="button" class="btn btn-primary">Vaciar</button>
             </div>
-
+        </div>
+        <div class="popup_flotante">
+            <div>
+                <h4>Producto añadido</h3>
+                <button type="button" class="btn btn-primary">ver carrito</button>
+            </div>
         </div>
     </div>    
     <footer>

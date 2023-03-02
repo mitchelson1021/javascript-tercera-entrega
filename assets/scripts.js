@@ -6,7 +6,7 @@ function zodiaco () {
     let dia = document.getElementById("dia");
     let mes = document.getElementById("mes");
     let año = document.getElementById("anio");
-    let mensaje = document.getElementById("mensaje");
+    let mensaje = document.querySelector("#mensaje");
 
         //Aries
     if (dia.value >= 21 && dia.value <= 31 &&  mes.value == "3" || dia.value >= 1 && dia.value <= 19 &&  mes.value == "4") {
@@ -63,14 +63,14 @@ function zodiaco () {
     }
 
     function fechaNacimiento (signo) {
-        let textMensaje = document.createElement("div");
-        textMensaje.innerHTML = `<h3>Si tu fecha de Nacimiento es ${dia.value} / ${mes.value} / ${año.value}  tu signo del Zodiaco es "${signo}"`  
-        mensaje.append(textMensaje);
+        //let textMensaje = document.createElement("div");
+        mensaje.innerHTML = `<h3>Si tu fecha de Nacimiento es ${dia.value} / ${mes.value} / ${año.value}  tu signo del Zodiaco es "${signo}"</h3>`  
+        //mensaje.append(textMensaje);
     }
 
     function error () {
-        let textMensajeError = document.createElement('h3');
-        textMensajeError.innerHTML = `<h3>Hubo un error al ingresar los datos, intenta de nuevo</h3>`;
+        //let textMensajeError = document.createElement('h3');
+        mensaje.innerHTML = `<h3>Hubo un error al ingresar los datos, intenta de nuevo</h3>`;
         mensaje.append(textMensajeError);
 
     }
@@ -87,8 +87,8 @@ function btn_select () {
         console.log(filtro);
 //-------Aquí me funciona en consola pero no en el Dom--------
         let datos_signo = document.createElement('div');
-        datos_signo.innerHTML = `<p>${filtro}</p>`;
-        mensaje.append(datos_signo);
+        datos_signo.innerHTML = ``
+        mensaje.append();
 
 }
 
@@ -97,8 +97,25 @@ function btn_select () {
 
 
 let carrito = [];
+let card_productos = document.querySelector('#cardProduct');
+let img_productos = document.querySelector('#imgProduct');
+let card_titulo = document.querySelector('#cardTitle');
+let card_precio = document.querySelector('#cardPrice');
+console.log(card_titulo)
 
 
+function insertar_productos (){
+    productos.forEach((info) => {
+        let titulo_de_producto = document.createElement('h5');
+        titulo_de_producto.innerHTML = info.nombre;
+        card_titulo.appendChild(titulo_de_producto);
+        
+    })
+    
+
+}
+
+insertar_productos()
 
 function agregar_al_carrito (e){
     console.log("se agregó producto al carrito");
