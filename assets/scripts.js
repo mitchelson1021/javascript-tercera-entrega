@@ -6,7 +6,7 @@ function zodiaco () {
     let dia = document.getElementById("dia");
     let mes = document.getElementById("mes");
     let año = document.getElementById("anio");
-    let mensaje = document.querySelector("#mensaje");
+    let mensaje = document.getElementById("mensaje");
 
         //Aries
     if (dia.value >= 21 && dia.value <= 31 &&  mes.value == "3" || dia.value >= 1 && dia.value <= 19 &&  mes.value == "4") {
@@ -63,16 +63,11 @@ function zodiaco () {
     }
 
     function fechaNacimiento (signo) {
-        //let textMensaje = document.createElement("div");
         mensaje.innerHTML = `<h3>Si tu fecha de Nacimiento es ${dia.value} / ${mes.value} / ${año.value}  tu signo del Zodiaco es "${signo}"</h3>`  
-        //mensaje.append(textMensaje);
     }
 
     function error () {
-        //let textMensajeError = document.createElement('h3');
-        mensaje.innerHTML = `<h3>Hubo un error al ingresar los datos, intenta de nuevo</h3>`;
-        mensaje.append(textMensajeError);
-
+        mensaje.innerHTML = '<h3>Hubo un error al ingresar los datos, intenta de nuevo</h3>';
     }
 
 }
@@ -85,60 +80,29 @@ function btn_select () {
         
         let filtro = signos.filter(buscar => buscar.signo == btn_select_signo);
         console.log(filtro);
-//-------Aquí me funciona en consola pero no en el Dom--------
-        let datos_signo = document.createElement('div');
-        datos_signo.innerHTML = ``
-        mensaje.append();
 
 }
 
 //-------------------Zona de Ventas-------------
 
 
-
 let carrito = [];
-let card_productos = document.querySelector('#cardProduct');
+let card_productos = document.querySelectorAll('#cardProduct');
 let img_productos = document.querySelector('#imgProduct');
-let card_titulo = document.querySelector('#cardTitle');
+let card_titulo = document.querySelectorAll('#cardTitle'); //titulo editar
 let card_precio = document.querySelector('#cardPrice');
-console.log(card_titulo)
+console.log(card_titulo);
 
-
-function insertar_productos (){
-    productos.forEach((info) => {
-        let titulo_de_producto = document.createElement('h5');
-        titulo_de_producto.innerHTML = info.nombre;
-        card_titulo.appendChild(titulo_de_producto);
+//El problema es que no puedo hacer que el nombre del producto aparezca
+//en el DOM - lo tengo en un objeto aparte como productos.js
+function tienda_productos () {
+    Object.entries(productos).forEach((data) => {
         
-    })
-    
-
-}
-
-insertar_productos()
-
-function agregar_al_carrito (e){
-    console.log("se agregó producto al carrito");
-
-    let hijo = e.target;
-    let padre = hijo.parentNode;
-    let abuelo = padre.parentNode;
-
-
-    let nombre_producto = padre.querySelector("h5").textContent;
-    let precio_producto = padre.querySelector("p").textContent;
-    let imagen_ptoducto = abuelo.querySelector("img").src;
-
-    console.log(nombre_producto);
-    console.log(precio_producto);
-    console.log(imagen_ptoducto);
-
-}
-
-let btn_comprar = document.querySelectorAll(".btn_agregar");
-
-for (comprar of btn_comprar){
-    comprar.addEventListener("click", agregar_al_carrito);
-    
-
-}
+        card_titulo.appendChild(data.nombre)
+        console.log(data).nombre
+        console.log(data.nombre)
+        console.log(`${data.nombre}`)
+        console.log([data])
+    });
+};
+ tienda_productos()
