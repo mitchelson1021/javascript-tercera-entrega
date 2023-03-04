@@ -29,75 +29,43 @@
                 </div>
             </div>
         </div>
-        <div class="filtro">
-            <select id="select">
-                <option>Seleccionar Signo</option>
-                <option selected>Acuario</option>
-                <option>Aries</option>
-                <option>Tauro</option>
-                <option>Géminis</option>
-                <option>Cancer</option>
-                <option>Leo</option>
-                <option>Virgo</option>
-                <option>Libra</option>
-                <option>Scorpio</option>
-                <option>Sagitarius</option>
-            </select>
-            <button onclick="btn_select()" class="btn btn-primary">Enviar</button>
-        </div>
-        <div id="mensaje"> </div>      
-        <!------------------------------------------------------------------------------->
-        <div class="tienda">
-            <div class="productos"><!--Seccion productos-->
-                <div class="producto"><!--cuadro producto-->
-                    <div class="d-flex justify-content-center flex-wrap"> <!--cuadro columnas-->
-                        
-                        <div class="card-producto text-center"> <!--card producto-->
-                            <div id="cardProduct" class="card" style="width: 18rem; margin: 10px;">
-                                <img id="imgProduct" src="./assets/imagenes/signos/Acuario/acuario-producto-1.jpg" class="card-img-top" alt="...">
-                                <div id="cardTitle" class="card-body">
-                                  <h5 class="card-title">Producto 1</h5>
-                                  <p id="cardPrice" class="card-text">$10.990</p>
-                                  <button type="button" class="btn btn-primary btn_agregar">Agregar al carrito</button>
-                                </div>
-                              </div>
-                        </div>
-                        <div class="card-producto text-center"> <!--card producto-->
-                            <div class="card" style="width: 18rem; margin: 10px;">
-                                <img src="./assets/imagenes/signos/Acuario/acuario-producto-2.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Producto 2</h5>
-                                  <p class="card-text">$12.000</p>
-                                  <button type="button" class="btn btn-primary btn_agregar">Agregar al carrito</button>
-                                </div>
-                              </div>
-                        </div>
-                        <div class="card-producto text-center"> <!--card producto-->
-                            <div class="card" style="width: 18rem; margin: 10px;">
-                                <img src="./assets/imagenes/signos/Acuario/acuario-producto-3.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Producto 3</h5>
-                                  <p class="card-text">$5.990</p>
-                                  <button type="button" class="btn btn-primary btn_agregar">Agregar al carrito</button>
-                                </div>
-                              </div>
-                        </div>
-                        <div class="card-producto text-center"> <!--card producto-->
-                            <div class="card" style="width: 18rem; margin: 10px;">
-                                <img src="./assets/imagenes/signos/Acuario/acuario-producto-4.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Producto 4</h5>
-                                  <p class="card-text">$9.990</p>
-                                  <button type="button" class="btn btn-primary btn_agregar">Agregar al carrito</button>
-                                </div>
-                              </div>
-                        </div>
-                    </div>
-                
-                </div>
-            </div>
 
+        <!------------------Filro----------------->
+        <div>
+            <div class="filtro">
+                <select id="select">
+                    <option>Seleccionar Signo</option>
+                    <option selected>Acuario</option>
+                    <option>Aries</option>
+                    <option>Tauro</option>
+                    <option>Géminis</option>
+                    <option>Cancer</option>
+                    <option>Leo</option>
+                    <option>Virgo</option>
+                    <option>Libra</option>
+                    <option>Scorpio</option>
+                    <option>Sagitarius</option>
+                </select>
+                <button onclick="btn_select()" class="btn btn-primary">Enviar</button>
+            </div>
+            <div id="mensaje"> </div>   
         </div>
+
+        <!----------------------Seccion productos----------------------->
+        <section class="tienda">
+            <div>
+
+                <!-------------------cuadro columnas----------------->
+                <div id="contenedorProductos" class="d-flex justify-content-center flex-wrap"> 
+                  
+                <!---------------Insertado desde Javascript-------->
+                </div>
+
+            </div>
+        </section>
+
+
+   <!----------------------Seccion carrito pop----------------------->
 
         <div class="carrito text-center">
             <div><h3>Carrito de compras</h3>

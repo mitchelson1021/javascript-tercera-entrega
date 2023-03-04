@@ -1,10 +1,10 @@
 let productos = [
     {
-        id: 5,
-        nombre: "Producto 5",
+        id: 1,
+        nombre: "Producto 1",
         imagen: "./assets/imagenes/signos/Acuario/acuario-producto-1.jpg",
         descripcion: "",
-        precio: 10.990,
+        precio: 10990,
         oferta: false,
         signo: "Acuario"
 },
@@ -13,7 +13,7 @@ let productos = [
     nombre: "Producto 2",
     imagen: "./assets/imagenes/signos/Acuario/acuario-producto-2.jpg",
     descripcion: "",
-    precio: 12.000,
+    precio: 12000,
     oferta: false,
     signo: "Acuario"
 },
@@ -22,7 +22,7 @@ let productos = [
     nombre: "Producto 3",
     imagen: "./assets/imagenes/signos/Acuario/acuario-producto-3.jpg",
     descripcion: "",
-    precio: 5.990,
+    precio: 5990,
     oferta: false,
     signo: "Acuario"
 },
@@ -31,7 +31,7 @@ let productos = [
     nombre: "Producto 4",
     imagen: "./assets/imagenes/signos/Acuario/acuario-producto-4.jpg",
     descripcion: "",
-    precio: 9.990,
+    precio: 9990,
     oferta: false,
     signo: "Acuario"
 },

@@ -20,6 +20,12 @@ body{
     border-radius: 5px;
 }
 
+.card{
+    width: 18rem;
+    margin: 10px;
+}
+
+
 .carrito{
     position: relative;
     opacity: 1;

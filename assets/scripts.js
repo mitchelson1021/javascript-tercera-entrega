@@ -87,22 +87,40 @@ function btn_select () {
 
 
 let carrito = [];
-let card_productos = document.querySelectorAll('#cardProduct');
-let img_productos = document.querySelector('#imgProduct');
-let card_titulo = document.querySelectorAll('#cardTitle'); //titulo editar
-let card_precio = document.querySelector('#cardPrice');
-console.log(card_titulo);
 
-//El problema es que no puedo hacer que el nombre del producto aparezca
-//en el DOM - lo tengo en un objeto aparte como productos.js
-function tienda_productos () {
-    Object.entries(productos).forEach((data) => {
+const contenedor = document.getElementById("contenedorProductos")
+
+function crear_tienda_productos () {
+    Object.entries(productos).forEach((producto) => {
         
-        card_titulo.appendChild(data.nombre)
-        console.log(data).nombre
-        console.log(data.nombre)
-        console.log(`${data.nombre}`)
-        console.log([data])
+        console.log(producto[1].imagen);
+        console.log(producto[1].nombre);
+        console.log(producto[1].precio);
+
+        const cards =  document.createElement('div');
+        cards.innerHTML =
+ 
+        `
+        <!----------card producto----------->
+        <div class="card text-center">
+        <img id="imgProduct" src="${producto[1].imagen}" class="card-img-top" alt="...">
+        <div id="cardTitle" class="card-body">
+        <h5 class="card-title">${producto[1].nombre}</h5>
+        <p id="cardPrice" class="card-text">$${producto[1].precio}</p>
+
+        <button onclick="btn_card" id="btnCard" type="button" class="btn btn-primary btn_agregar">Agregar al carrito</button>
+        </div>
+        </div>`;
+        contenedor.appendChild(cards);
+
     });
 };
- tienda_productos()
+ crear_tienda_productos();
+
+function btn_card () {
+    
+}
+
+let boton_card = document.getElementById('btnCard');
+console.log()
+
