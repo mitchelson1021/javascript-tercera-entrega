@@ -25,6 +25,15 @@ body{
     margin: 10px;
 }
 
+.sku{
+    display: inline-block;
+    font-size: 10px;
+    color: darkgray;
+}
+
+.signo{
+    display: inline-block;
+}
 
 .carrito{
     position: relative;

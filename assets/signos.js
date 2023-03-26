@@ -49,14 +49,14 @@ let signos = [
     "nuemro":"7"
 },
 {
-    "signo":"Eescorpio", 
+    "signo":"Escorpio", 
     "color":"rojo", 
     "piedra":"",
     "elemento":"agua",
     "nuemro":"6"
 },
 {
-    "signo":"Sagitarius", 
+    "signo":"Sagitario", 
     "color":"azul", 
     "piedra":"",
     "elemento":"fuego",

@@ -43,8 +43,8 @@
                     <option>Leo</option>
                     <option>Virgo</option>
                     <option>Libra</option>
-                    <option>Scorpio</option>
-                    <option>Sagitarius</option>
+                    <option>Escorpio</option>
+                    <option>Sagitario</option>
                 </select>
                 <button onclick="btn_select()" class="btn btn-primary">Enviar</button>
             </div>
@@ -65,19 +65,30 @@
         </section>
 
 
-   <!----------------------Seccion carrito pop----------------------->
+   <!----------------------Seccion carrito----------------------->
 
         <div class="carrito text-center">
-            <div><h3>Carrito de compras</h3>
-                <table class="d-flex justify-content-center">
+            <div>
+                <h3>Carrito de compras</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>imagen</th>
+                            <th>01</th>
+                            <th>Titulo_nombre</th>
+                            <th>$10.990</th>
+                            <th>X</th>
+                        </tr>
+                    </thead>
                     <tbody>
                         <tr>
                             <td id="imagen_carrito"></td>
                             <td id="cantidad_carrito"></td>
-                            <td id="producto_carrito"></td>
+                            <td id="nombre_carrito"></td>
                             <td id="precio_carrito"></td>
                             <td id="btn_eliminar_carrito"></td>
                         </tr>
+
                     </tbody>
                 </table>
                 <table>
@@ -91,6 +102,7 @@
                 <button type="button" class="btn btn-primary">Vaciar</button>
             </div>
         </div>
+
         <div class="popup_flotante">
             <div>
                 <h4>Producto añadido</h3>

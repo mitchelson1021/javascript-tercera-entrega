@@ -86,17 +86,20 @@ function btn_select () {
 //-------------------Zona de Ventas-------------
 
 
-let carrito = [];
 
-const contenedor = document.getElementById("contenedorProductos")
+
+const contenedor = document.getElementById("contenedorProductos");
 
 function crear_tienda_productos () {
+
     Object.entries(productos).forEach((producto) => {
         
-        console.log(producto[1].imagen);
-        console.log(producto[1].nombre);
-        console.log(producto[1].precio);
+        //console.log(producto[1].imagen);
+        //console.log(producto[1].nombre);
+        //console.log(producto[1].precio);
 
+        // Por fin, aquí pude entender de las diferencias al
+        // insertar html desde js
         const cards =  document.createElement('div');
         cards.innerHTML =
  
@@ -105,10 +108,11 @@ function crear_tienda_productos () {
         <div class="card text-center">
         <img id="imgProduct" src="${producto[1].imagen}" class="card-img-top" alt="...">
         <div id="cardTitle" class="card-body">
-        <h5 class="card-title">${producto[1].nombre}</h5>
-        <p id="cardPrice" class="card-text">$${producto[1].precio}</p>
-
-        <button onclick="btn_card" id="btnCard" type="button" class="btn btn-primary btn_agregar">Agregar al carrito</button>
+            <h5 class="card-title">${producto[1].nombre}</h5>
+            <p id="description">${producto[1].descripcion}</p>
+            <p class="sku">SKU:</p><p class="sku">${producto[1].id}</p>
+            <h6 id="cardPrice" class="card-text"><h6 class="signo">$</h6>${producto[1].precio}</h6><br>
+            <button id="btnCard" type="button" class="btn btn-primary btn_agregar">Agregar al carrito</button>
         </div>
         </div>`;
         contenedor.appendChild(cards);
@@ -117,10 +121,67 @@ function crear_tienda_productos () {
 };
  crear_tienda_productos();
 
-function btn_card () {
+ //creando la funcion para añadir al carrito de compra
+
+
+
+let btn_card = document.querySelectorAll('#btnCard');
+//console.log(btn_card);
+
+let carrito = [{}];
+
+for (btn_listen of btn_card) {
+    btn_listen.addEventListener('click', (e) => {
+        
+        
+        let imagen_carrito = e.target.parentNode.parentNode.childNodes[1].src;
+        let id_carrito = parseInt(e.target.parentNode.childNodes[6].textContent);
+        let nombre_carrito = e.target.parentNode.childNodes[1].textContent;
+        let precio_carrito = parseInt(e.target.parentNode.childNodes[10].textContent);
+        let cantidad_carrito = 1;
+        
+
+        carrito.push({
+            id: id_carrito,
+            cantidad: cantidad_carrito,
+            imagen: imagen_carrito,
+            nombre: nombre_carrito,
+            precio: precio_carrito,
+
+        });
+        console.log(carrito);
+
+    });
     
 }
 
-let boton_card = document.getElementById('btnCard');
-console.log()
+
+//Renderizar Carrito
+carrito.forEach(rend_carrito => {
+    let render_carrito_cantidad = document.getElementById('cantidad_carrito');
+    render_carrito_cantidad.textContent = `${cantidad_carrito}`;
+
+    let render_carrito_imagen = document.getElementById('imagen_carrito').textContent = `${imagen_carrito}`;
+    let render_carrito_nombre = document.getElementById('nombre_carrito').textContent = `${nombre_carrito}`;
+    let render_carrito_precio = document.getElementById('precio_carrito').textContent = `${precio_carrito}`;
+    let render_carrito_eliminar = document.getElementById('btn_eliminar_carrito');
+});
+
+
+
+
+
+
+
+//let selectCarrito = getElementById('imagen_carrito');
+
+
+
+
+
+/* function sgte_fn (e) {
+    let btn_padre = document.querySelector('.sku')
+    console.log(sku_list, e)
+    }
+ */
 
