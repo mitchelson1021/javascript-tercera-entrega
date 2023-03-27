@@ -93,10 +93,7 @@ const contenedor = document.getElementById("contenedorProductos");
 function crear_tienda_productos () {
 
     Object.entries(productos).forEach((producto) => {
-        
-        //console.log(producto[1].imagen);
-        //console.log(producto[1].nombre);
-        //console.log(producto[1].precio);
+      
 
         // Por fin, aquí pude entender de las diferencias al
         // insertar html desde js
@@ -123,12 +120,9 @@ function crear_tienda_productos () {
 
  //creando la funcion para añadir al carrito de compra
 
-
-
 let btn_card = document.querySelectorAll('#btnCard');
-//console.log(btn_card);
 
-let carrito = [{}];
+let carrito = [];
 
 for (btn_listen of btn_card) {
     btn_listen.addEventListener('click', (e) => {
@@ -140,48 +134,63 @@ for (btn_listen of btn_card) {
         let precio_carrito = parseInt(e.target.parentNode.childNodes[10].textContent);
         let cantidad_carrito = 1;
         
+        
+        let comparar = carrito.find(item => item.id == id_carrito)
+        if (comparar === undefined) {
 
-        carrito.push({
-            id: id_carrito,
-            cantidad: cantidad_carrito,
-            imagen: imagen_carrito,
-            nombre: nombre_carrito,
-            precio: precio_carrito,
+            carrito.push({
+                id: id_carrito,
+                cantidad: cantidad_carrito,
+                imagen: imagen_carrito,
+                nombre: nombre_carrito,
+                precio: precio_carrito,
+    
+            });
 
-        });
+        }else {
+            comparar.cantidad ++ ;
+            comparar.precio = comparar.cantidad * precio_carrito;
+        }
+        
         console.log(carrito);
+        renderizar();
+
 
     });
-    
+
 }
 
-
 //Renderizar Carrito
-carrito.forEach(rend_carrito => {
-    let render_carrito_cantidad = document.getElementById('cantidad_carrito');
-    render_carrito_cantidad.textContent = `${cantidad_carrito}`;
+function renderizar () {
 
-    let render_carrito_imagen = document.getElementById('imagen_carrito').textContent = `${imagen_carrito}`;
-    let render_carrito_nombre = document.getElementById('nombre_carrito').textContent = `${nombre_carrito}`;
-    let render_carrito_precio = document.getElementById('precio_carrito').textContent = `${precio_carrito}`;
-    let render_carrito_eliminar = document.getElementById('btn_eliminar_carrito');
-});
+    let la_tabla = document.getElementById('tbody_carrito');
+    la_tabla.innerHTML = ''; // Con esto limpio el carrito para evitar repetidos
+    
+    Object.values(carrito).forEach((vuelta) => {
+        
+    let tabla_carro = document.createElement('tr');
+    tabla_carro.innerHTML = `
+                    <td><img src="${vuelta.imagen}" width="50px"></td>
+                    <td>${vuelta.cantidad}</td>
+                    <td>${vuelta.nombre}</td>
+                    <td>${vuelta.precio}</td>
+                    <td><button onclick="btn_eliminar()" type="button" class="btn btn-danger">X</button></td>
+                    `;
+    la_tabla.append(tabla_carro);
+    
 
+    });
+};
 
-
-
-
-
-
-//let selectCarrito = getElementById('imagen_carrito');
-
-
-
-
-
-/* function sgte_fn (e) {
-    let btn_padre = document.querySelector('.sku')
-    console.log(sku_list, e)
+function btn_eliminar() {
+    for (const eliminar of btn_card) {
+        eliminar.addEventListener('click', (e) => {
+            let cantidad_bajar = e.target
+            console.log(cantidad_bajar)
+        } )
     }
- */
+    console.log(carrito[0].cantidad);
+    carrito.splice(1)
+}
+
 
